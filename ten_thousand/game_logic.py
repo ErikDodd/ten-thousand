@@ -20,15 +20,11 @@ class GameLogic:
         count = Counter(tuple)
         score_counter = 0
 
-
-        # Score for Straights
         if len(count) == 6:
             return 1500
 
-        # Three Pair
         if len(count) == 3 and all(value == 2 for value in count.values()):
             return 1500
-
 
         for number, count in count.items():
             if count < 3:
@@ -43,9 +39,3 @@ class GameLogic:
                 score_counter += triple_points[number] * 4
 
         return score_counter
-
-
-
-
-        # for dice in count:
-        # GameLogic.dice_points[dice]

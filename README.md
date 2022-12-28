@@ -24,3 +24,9 @@ Tests
 - How do you run tests?
 - Any tests of note?
 - Describe any tests that you did not complete, skipped, etc
+
+### Attributions:
+
+A special thank you to Justin Hammerly for helping Eric and I get started with the calculate score  method. 
+
+Another special thank you to Domaine Scully. He showed us that using a for loop to iterate over the tuple is a great route for passing the rest of the tests. I previously tried mimicking the syntax that I used for 3 pairs and making slight adjustments but I wasn't successful.
