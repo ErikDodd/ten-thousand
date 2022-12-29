@@ -1,6 +1,6 @@
 # LAB - Class 06
 ## Project: Ten Thousand - version 1
-## Author: Erik Dodd & Eric Kinuthia
+## Author: Erik Dodd 
 ### Links and Resources
 
 - back-end server url (when applicable) - **N/A**
@@ -20,7 +20,7 @@ e.g. python main.py
 
 - How to use your library (where applicable) - **N/A**
 
-Tests
+#### Tests
 
 - How do you run tests?
 
@@ -40,5 +40,49 @@ A special thank you to Justin Hammerly for helping Eric and I get started with t
 
 Another special thank you to Domaine Scully. He showed us that using a for loop to iterate over the tuple is a great route for passing the rest of the tests. I previously tried mimicking the syntax that I used for 3 pairs and making slight adjustments but I wasn't successful.
 
+
+
+# LAB - Class 07
+## Project: Ten Thousand - version 1
+## Author: Erik Dodd 
+### Links and Resources
+
+- back-end server url (when applicable) - **N/A**
+- front-end application (when applicable) - **N/A**
+
+### Setup
+
+- .env requirements (where applicable)
+i.e.
+
+- PORT - Port Number - **N/A**
+- DATABASE_URL - URL to the running Postgres instance/db - **N/A**
+
+- How to initialize/run your application (where applicable)
+
+- python ten_thousand/game.py
+
+- How to use your library (where applicable) - **N/A**
+
+#### Tests
+
+- How do you run tests?
+
+- We used starter code that contains simulation files found in the website listed below:
+
+https://github.com/codefellows/seattle-code-python-401d20/tree/main/class-07/lab/tests/version_2
+
+ 
+- Any tests of note?
+
+- No
+
+- Describe any tests that you did not complete, skipped, etc
+
+- Not quite finished. Need to complete the bank_one_roll_then_quit and the bank_two_roll_then_quit tests
+
+### Attributions:
+
 Lab 07:
 
+- A special thank you to Brandon Mizutani. He helped me a lot on troubleshooting/debugging, my play() function, and the structure for the class Banker and class Game.
