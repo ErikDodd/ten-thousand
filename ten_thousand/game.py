@@ -17,7 +17,6 @@ class Banker:
         self.shelved = 0
         return self.balance
 
-
     def clear_shelf(self):
         pass
 
@@ -55,15 +54,11 @@ Welcome to Ten Thousand
             if enter_dice == "q":
                 print(f"Thanks for playing. You earned {self.banker.balance} points")
                 return False
-            #elif:
-                #Create an instance of calculate score and put it into a variable
-                # Use instance of shelf()
-                # print
-                # if input == "b" , use bank() function self.banker.bank
-                # reset dice_amount to 6
-                # print you banked this many points in round blah blah
-                # if dice_amount == 0, reset the amount of dice quanity to 6...reset current dice quantity to 6
-                ()
+
+            # elif print(f"""
+            # You have 50 unbanked points and 5 dice #remaining
+            # (r)oll again, (b)ank your points or (q)uit:
+            # """):
 
 
 if __name__ == "__main__":
