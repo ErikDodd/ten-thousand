@@ -4,13 +4,10 @@ from game_logic import GameLogic
 class Banker:
     def __init__(self, balance=0, shelved=0):
         self.balance = balance
-        # unbanked points
         self.shelved = shelved
-        pass
 
     def shelf(self, points):
         self.points = points
-        pass
 
     def bank(self):
         self.balance += self.shelved
