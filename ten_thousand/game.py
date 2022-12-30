@@ -1,4 +1,5 @@
 from game_logic import GameLogic
+from collections import Counter
 
 
 class Banker:
@@ -6,8 +7,8 @@ class Banker:
         self.balance = balance
         self.shelved = shelved
 
-    def shelf(self, points):
-        self.points = points
+    def shelf(self):
+        pass
 
     def bank(self):
         self.balance += self.shelved
@@ -20,10 +21,12 @@ class Banker:
 
 class Game:
 
-    def __init__(self):
-        self.round = 0
+    def __init__(self, points=0):
+        self.round = 1
         self.banker = Banker()
         self.dice_amount = 6
+        self.points = points
+
 
     def start_game(self, current_dice_roll=GameLogic.roll_dice):
         print("""
@@ -37,25 +40,45 @@ Welcome to Ten Thousand
             self.play(current_dice_roll)
 
     def play(self, current_dice_roll):
-        while True:
-            self.round = self.round + 1
-            print(f"Starting round {self.round}")
+        while True and self.points > -1 and self.banker.balance < 1000:
+            print(f"round {self.round}")
             print(f"Rolling {self.dice_amount} dice...")
             dice_results = current_dice_roll(self.dice_amount)
             dice_string = ""
             for numbers in dice_results:
                 dice_string += f"{numbers} "
             print(f"*** {dice_string} ***")
-            print("Enter dice to keep, or (q)uit:")
+            print("Enter dice to keep, (r)oll again, (b)ank your points  or (q)uit:")
             enter_dice = input("> ")
+            #print(f"{enter_dice}")
+            #print(f"{type(enter_dice)}")
             if enter_dice == "q":
                 print(f"Thanks for playing. You earned {self.banker.balance} points")
                 return False
+            elif (enter_dice == "b") or (enter_dice == "r"):
+                #print(f"User Input: {enter_dice}")
+                self.banker.balance += self.points
+                #print(f"Total points: {self.banker.balance}")
+                self.round = self.round + 1
+                self.dice_amount = 6
+                self.points = 0
+                #print(f"Round: {self.round}, Dice Amount: {self.dice_amount}, Points: {self.points}")
 
-            # elif print(f"""
-            # You have 50 unbanked points and 5 dice #remaining
-            # (r)oll again, (b)ank your points or (q)uit:
-            # """):
+            #elif enter_dice != "q" or enter_dice != "b" or enter_dice != "r":
+            else:
+                #print(len(enter_dice))
+                new_points = GameLogic.calculate_score(enter_dice)
+                #print(new_points)
+                self.points += new_points
+                #print(f"Round points: {self.points}")
+                self.dice_amount = self.dice_amount - len(enter_dice)
+                #print("dice amount after: ", self.dice_amount)
+                print(f"""
+You have {self.points} unbanked points and {self.dice_amount} dice remaining
+(r)oll again, (b)ank your points or (q)uit:""")
+
+
+
 
 
 if __name__ == "__main__":
