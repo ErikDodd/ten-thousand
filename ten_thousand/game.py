@@ -7,16 +7,11 @@ class Banker:
         self.balance = balance
         self.shelved = shelved
 
-    #def shelf(self):
-        
 
     def bank(self):
         self.balance += self.shelved
         self.shelved = 0
         return self.balance
-
-    #def clear_shelf(self):
-
 
 
 class Game:
@@ -100,8 +95,6 @@ Welcome to Ten Thousand
     You have {self.points} unbanked points and {self.dice_amount} dice remaining
     (r)oll again, (b)ank your points or (q)uit:""")
                         cheater = True
-
-
 
 
 
