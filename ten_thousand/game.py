@@ -7,16 +7,16 @@ class Banker:
         self.balance = balance
         self.shelved = shelved
 
-    def shelf(self):
-        pass
+    #def shelf(self):
+        
 
     def bank(self):
         self.balance += self.shelved
         self.shelved = 0
         return self.balance
 
-    def clear_shelf(self):
-        pass
+    #def clear_shelf(self):
+
 
 
 class Game:
